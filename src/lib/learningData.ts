@@ -20,7 +20,8 @@ export const SPECIAL_INTERESTS: {
 ];
 
 export function interestOf(id: SpecialInterest) {
-  return SPECIAL_INTERESTS.find((i) => i.id === id) ?? SPECIAL_INTERESTS[1];
+  return SPECIAL_INTERESTS.find((i) => i.id === id) ?? SPECIAL_INTERESTS[0]!;
+}
 }
 
 export const AFFIRMATIONS = [
