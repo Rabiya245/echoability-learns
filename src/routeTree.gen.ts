@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActivitiesRouteImport } from './routes/activities'
+import { Route as CalmRouteImport } from './routes/calm'
+import { Route as EmotionsRouteImport } from './routes/emotions'
+import { Route as EnglishRouteImport } from './routes/english'
+import { Route as FunRouteImport } from './routes/fun'
+import { Route as LifeskillsRouteImport } from './routes/lifeskills'
+import { Route as MathsRouteImport } from './routes/maths'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as SocialRouteImport } from './routes/social'
+import { Route as VideosRouteImport } from './routes/videos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivitiesRoute = ActivitiesRouteImport.update({
+  id: '/activities',
+  path: '/activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalmRoute = CalmRouteImport.update({
+  id: '/calm',
+  path: '/calm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmotionsRoute = EmotionsRouteImport.update({
+  id: '/emotions',
+  path: '/emotions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnglishRoute = EnglishRouteImport.update({
+  id: '/english',
+  path: '/english',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FunRoute = FunRouteImport.update({
+  id: '/fun',
+  path: '/fun',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LifeskillsRoute = LifeskillsRouteImport.update({
+  id: '/lifeskills',
+  path: '/lifeskills',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MathsRoute = MathsRouteImport.update({
+  id: '/maths',
+  path: '/maths',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRoute = ScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SocialRoute = SocialRouteImport.update({
+  id: '/social',
+  path: '/social',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideosRoute = VideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/calm': typeof CalmRoute
+  '/emotions': typeof EmotionsRoute
+  '/english': typeof EnglishRoute
+  '/fun': typeof FunRoute
+  '/lifeskills': typeof LifeskillsRoute
+  '/maths': typeof MathsRoute
+  '/profile': typeof ProfileRoute
+  '/schedule': typeof ScheduleRoute
+  '/social': typeof SocialRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/calm': typeof CalmRoute
+  '/emotions': typeof EmotionsRoute
+  '/english': typeof EnglishRoute
+  '/fun': typeof FunRoute
+  '/lifeskills': typeof LifeskillsRoute
+  '/maths': typeof MathsRoute
+  '/profile': typeof ProfileRoute
+  '/schedule': typeof ScheduleRoute
+  '/social': typeof SocialRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/activities': typeof ActivitiesRoute
+  '/calm': typeof CalmRoute
+  '/emotions': typeof EmotionsRoute
+  '/english': typeof EnglishRoute
+  '/fun': typeof FunRoute
+  '/lifeskills': typeof LifeskillsRoute
+  '/maths': typeof MathsRoute
+  '/profile': typeof ProfileRoute
+  '/schedule': typeof ScheduleRoute
+  '/social': typeof SocialRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/activities'
+    | '/calm'
+    | '/emotions'
+    | '/english'
+    | '/fun'
+    | '/lifeskills'
+    | '/maths'
+    | '/profile'
+    | '/schedule'
+    | '/social'
+    | '/videos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/activities'
+    | '/calm'
+    | '/emotions'
+    | '/english'
+    | '/fun'
+    | '/lifeskills'
+    | '/maths'
+    | '/profile'
+    | '/schedule'
+    | '/social'
+    | '/videos'
+  id:
+    | '__root__'
+    | '/'
+    | '/activities'
+    | '/calm'
+    | '/emotions'
+    | '/english'
+    | '/fun'
+    | '/lifeskills'
+    | '/maths'
+    | '/profile'
+    | '/schedule'
+    | '/social'
+    | '/videos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActivitiesRoute: typeof ActivitiesRoute
+  CalmRoute: typeof CalmRoute
+  EmotionsRoute: typeof EmotionsRoute
+  EnglishRoute: typeof EnglishRoute
+  FunRoute: typeof FunRoute
+  LifeskillsRoute: typeof LifeskillsRoute
+  MathsRoute: typeof MathsRoute
+  ProfileRoute: typeof ProfileRoute
+  ScheduleRoute: typeof ScheduleRoute
+  SocialRoute: typeof SocialRoute
+  VideosRoute: typeof VideosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activities': {
+      id: '/activities'
+      path: '/activities'
+      fullPath: '/activities'
+      preLoaderRoute: typeof ActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calm': {
+      id: '/calm'
+      path: '/calm'
+      fullPath: '/calm'
+      preLoaderRoute: typeof CalmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emotions': {
+      id: '/emotions'
+      path: '/emotions'
+      fullPath: '/emotions'
+      preLoaderRoute: typeof EmotionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/english': {
+      id: '/english'
+      path: '/english'
+      fullPath: '/english'
+      preLoaderRoute: typeof EnglishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fun': {
+      id: '/fun'
+      path: '/fun'
+      fullPath: '/fun'
+      preLoaderRoute: typeof FunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lifeskills': {
+      id: '/lifeskills'
+      path: '/lifeskills'
+      fullPath: '/lifeskills'
+      preLoaderRoute: typeof LifeskillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maths': {
+      id: '/maths'
+      path: '/maths'
+      fullPath: '/maths'
+      preLoaderRoute: typeof MathsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/social': {
+      id: '/social'
+      path: '/social'
+      fullPath: '/social'
+      preLoaderRoute: typeof SocialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/videos': {
+      id: '/videos'
+      path: '/videos'
+      fullPath: '/videos'
+      preLoaderRoute: typeof VideosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActivitiesRoute: ActivitiesRoute,
+  CalmRoute: CalmRoute,
+  EmotionsRoute: EmotionsRoute,
+  EnglishRoute: EnglishRoute,
+  FunRoute: FunRoute,
+  LifeskillsRoute: LifeskillsRoute,
+  MathsRoute: MathsRoute,
+  ProfileRoute: ProfileRoute,
+  ScheduleRoute: ScheduleRoute,
+  SocialRoute: SocialRoute,
+  VideosRoute: VideosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
