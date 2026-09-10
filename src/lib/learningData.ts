@@ -43,8 +43,8 @@ export function dailySticker(interest: SpecialInterest, day: string) {
   const seed = [...day].reduce((a, c) => a + c.charCodeAt(0), 0);
   const info = interestOf(interest);
   return {
-    emoji: info.emojis[seed % info.emojis.length],
-    text: AFFIRMATIONS[seed % AFFIRMATIONS.length],
+    emoji: info.emojis[seed % info.emojis.length]!,
+    text: AFFIRMATIONS[seed % AFFIRMATIONS.length]!,
     buddy: info.buddy,
   };
 }
