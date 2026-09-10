@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { Card, PageTitle } from "@/components/kit";
 import { PARENT_TIPS, SPECIAL_INTERESTS } from "@/lib/learningData";
