@@ -267,3 +267,17 @@
 @utility anim-float {
   animation: soft-float 3.5s ease-in-out infinite;
 }
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.85);
+  }
+  25%,
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+}
