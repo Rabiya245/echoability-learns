@@ -33,6 +33,7 @@ function Toggle({ label, on, onChange }: { label: string; on: boolean; onChange:
 
 function ProfilePage() {
   const { profile, settings, progress, setProfile, setSettings, resetAll, ready } = useStore();
+  const navigate = useNavigate();
   if (!ready) return null;
 
   const themes: { id: ThemeName; label: string }[] = [
@@ -42,9 +43,26 @@ function ProfilePage() {
     { id: "dark", label: "Dark" },
   ];
 
+  const logout = () => {
+    if (confirm("Log out? This clears the name, coins and badges on this device.")) {
+      resetAll();
+      navigate({ to: "/" });
+    }
+  };
+
   return (
     <AppShell>
-      <PageTitle emoji="🧒" title="Me" subtitle="Your progress and your settings" />
+      <div className="mb-4 flex items-start justify-between gap-2">
+        <PageTitle emoji="🧒" title="Me" subtitle="Your progress and your settings" />
+        <button
+          type="button"
+          onClick={logout}
+          aria-label="Log out"
+          className="tap mt-1 shrink-0 rounded-full border-2 border-destructive px-3 py-1.5 text-sm font-bold text-destructive"
+        >
+          ⎋ Log out
+        </button>
+      </div>
 
       <Card className="flex items-center gap-4">
         <span className="text-5xl">{profile.avatar}</span>
