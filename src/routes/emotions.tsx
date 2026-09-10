@@ -14,7 +14,7 @@ export const Route = createFileRoute("/emotions")({
       { property: "og:description", content: "Feelings faces, zone check-ins and coping tools for children." },
     ],
   }),
-  component: EmotionsPage;
+  component: EmotionsPage,
 });
 
 function EmotionsPage() {
